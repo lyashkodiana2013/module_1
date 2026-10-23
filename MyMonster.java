@@ -17,7 +17,6 @@ public class MyMonster extends Monster {
         System.out.println("Решите задачу:");
 
         Random random = new Random();
-        // диапазоны как у тебя
         int x = random.nextInt(10 * (difficultGame - 1), 10 * difficultGame);
         int y = random.nextInt(10 * (difficultGame - 1), 10 * difficultGame);
         int z = random.nextInt(100 * (difficultGame - 1), 100 * difficultGame);
