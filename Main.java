@@ -80,19 +80,17 @@ public class Main {
                             person.move(x, y);
                             step++;
 
-                            System.out.println("Ход корректный; новые координаты: "
+                            System.out.println("Ход выполнен; новые координаты: "
                                     + person.getX() + ", " + person.getY()
                                     + "\nХод номер: " + step);
                         } else if (board[y - 1][x - 1].equals(castle)) {
                             System.out.println("Вы прошли игру!");
                             break;
                         } else {
-                            // Столкновение с монстром
                             for (Monster monster : monsters) {
                                 if (monster.conflictPerson(x, y)) {
                                     boolean won = false;
 
-                                    // Только MyMonster даёт две попытки
                                     if (monster instanceof MyMonster) {
                                         System.out.println("Это особый монстр! У тебя есть 2 попытки.");
                                         int attemptsLeft = 2;
@@ -111,7 +109,6 @@ public class Main {
                                             }
                                         }
                                     } else {
-                                        // Обычные и BigMonster: одна попытка, сразу жизнь
                                         if (monster.taskMonster(difficultGame)) {
                                             won = true;
                                         } else {
@@ -126,7 +123,7 @@ public class Main {
                                         step++;
                                         System.out.println("Монстр побеждён! Ты прошёл дальше.");
                                     }
-                                    break; // выходим из цикла по монстрам
+                                    break;
                                 }
                             }
                         }
