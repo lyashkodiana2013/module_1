@@ -21,7 +21,6 @@ public class Main {
             }
         }
 
-        // Создаём монстров: обычные, большие и несколько MyMonster (особых)
         int countMonster = sizeBoard * sizeBoard - sizeBoard - 1;
         Monster[] monsters = new Monster[countMonster];
         int count = 0;
@@ -29,7 +28,6 @@ public class Main {
         while (count < countMonster) {
             Monster monster;
 
-            // 20% шанс создать MyMonster (особого монстра с двумя попытками)
             if (random.nextDouble() < 0.2) {
                 monster = new MyMonster(sizeBoard);
             } else if (random.nextBoolean()) {
@@ -96,7 +94,7 @@ public class Main {
 
                                     // Только MyMonster даёт две попытки
                                     if (monster instanceof MyMonster) {
-                                        System.out.println("⚠️ Это особый монстр! У тебя есть 2 попытки.");
+                                        System.out.println("Это особый монстр! У тебя есть 2 попытки.");
                                         int attemptsLeft = 2;
 
                                         while (attemptsLeft > 0 && !won) {
