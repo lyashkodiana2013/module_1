@@ -52,8 +52,22 @@ public class Monster {
                 return false;
             }
         } else {
-            // какой-то код
-            return false;
+            Random random = new Random();
+            int a = random.nextInt(200);
+            int b = random.nextInt(200);
+            int trueAnswer = a + b;
+
+            System.out.println("Реши пример: " + a + " + " + b + " = ?");
+            Scanner scanner = new Scanner(System.in);
+            int answer = scanner.nextInt();
+
+            if (trueAnswer == answer) {
+                System.out.println("Верно! Ты победил монстра");
+                return true;
+            } else {
+                System.out.println("Ты проиграл эту битву!");
+                return false;
+            }
         }
     }
 }
